@@ -1,8 +1,9 @@
 from setuptools.extern import names
 
-from christmasapp import views
+from christmasapp import views as christmasapp_views
+from secret_santa import views as secret_santa_views
 """
-URL configuration for christmas project.
+URL configuration for my_app project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -23,5 +24,6 @@ from django.urls import path
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('ischristmastoday', views.index, name='index'),
+    path('', christmasapp_views.index, name='index'),
+    path('secret_santa', secret_santa_views.secret_santa, name='secret_santa'),
 ]
